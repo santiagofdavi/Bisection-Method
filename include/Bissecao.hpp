@@ -16,6 +16,6 @@ double calcula_x(const double &a, const double &b);
 void print(const double &a, const double &b, const double &Fa, const double &Fb, 
            const double &x, const double &Fx, const double &deltax, const unsigned &k);
 
-void bissecao(double a, double b, double Toler, unsigned IterMax);
+void bissecao(double &a, double &b, double &Toler, unsigned &IterMax);
 
 #endif

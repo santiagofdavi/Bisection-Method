@@ -16,7 +16,7 @@ using namespace std;
 
 double avaliacao_funcao(const double &x){
 
-    return pow(M_E, x) * cos(x) -1 * 4 * sin(x);
+    return 0.05 * pow(x, 3) - 0.4 * pow(x, 2) + 3 * x * sin(x);
 
 }
 
@@ -31,7 +31,11 @@ void print(const double &a, const double &b, const double &Fa, const double &Fb,
 
     
     cout << setprecision(5) << fixed << k << "   " << a 
-        << "   " << Fa << "   " << b << "  ";
+        << "   " << Fa << "  ";
+
+    if((Fa < 10 && Fa > 0) || (Fa > -1 * 10 && Fa < 0)) cout << " ";
+        
+    cout << b << "  ";
         
     if((Fb < 10 && Fb > 0) || (Fb > -1 * 10 && Fb < 0)) cout << " ";
 
@@ -44,7 +48,7 @@ void print(const double &a, const double &b, const double &Fa, const double &Fb,
 
 }
 
-void bissecao(double a, double b, double Toler, unsigned IterMax){
+void bissecao(double &a, double &b, double &Toler, unsigned &IterMax){
 
     cout << "\n\tCalculo de raiz pelo metodo da bissecao\n" << endl;
 
