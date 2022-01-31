@@ -39,12 +39,16 @@ void print(const double &a, const double &b, const double &Fa, const double &Fb,
         
     if((Fb < 10 && Fb > 0) || (Fb > -1 * 10 && Fb < 0)) cout << " ";
 
-    cout << Fb << "    " 
-        << deltax << "    " << x << "    ";
+    cout << Fb << "    "; 
+    cout << scientific << deltax << "    ";
+    cout.unsetf(ios::scientific);
+    cout << setprecision(5) << fixed << x << "    ";
 
     if(Fx > 0) cout << " ";
              
-    cout << Fx << endl;
+    cout << scientific << Fx << endl;
+    cout.unsetf(ios::scientific);
+    cout << setprecision(5) << fixed;
 
 }
 
@@ -52,7 +56,7 @@ void bissecao(double &a, double &b, double &Toler, unsigned &IterMax){
 
     cout << "\n\tCalculo de raiz pelo metodo da bissecao\n" << endl;
 
-    cout << "k     a_k       Fa_k      b_k       Fb_k      deltax_k     x_k        Fx_k" << endl;
+    cout << "k     a_k       Fa_k       b_k         Fb_k      deltax_k         x_k          Fx_k" << endl;
 
     int Info;
 
